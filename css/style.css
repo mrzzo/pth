@@ -1,0 +1,477 @@
+:root {
+    /* background */
+    --bg-site: hsl(0, 0%, 85%);
+    --bg-card: hsl(0, 0%, 95%);  
+    --bg-container: hsl(0, 0%, 100%); 
+    --bg-container-hover: hsl(0, 0%, 85%); 
+    --bg-bottom-bar: hsl(0, 0%, 85%); 
+    --large-button: hsl(0, 0%, 100%);
+    --nav-buttons: hsl(0, 0%, 100%);
+    --square-link: hsl(0, 0%, 100%);       
+    
+    --width-card-desk: 50vw;
+    --width-container-desk:45vw;
+    --width-xl-button-desk:40vw;
+    --width-popup-desk:35vw;
+    --width-block-folders: 20vw;
+    
+    --line-large-button-clear: hsl(0, 0%, 85%);
+    
+    --line-photo-profile: hsl(0, 0%, 40%);
+   
+    /* cor texto */
+    --text-default: hsl(0, 0%, 3%);
+    --text-inverse: hsl(0, 0%, 98%);
+    
+    /* --texto-preto: black;
+    --texto-branco: ;
+    --texto-branco: ;
+    --text-bttn-dific: black;
+    --text-color-w: white;
+    --text-clr-comparacao: red;
+    
+     tamanho texto 
+    --tamanho-options: 20px;
+    --tamanho-nav-button: 23px;
+     gap 
+    --gap-div-options: 30px;
+    --gap-div-options-mob: 15px; */
+}
+
+/* Modo Noturno */
+@media (prefers-color-scheme: dark) {  
+    :root {
+    --bg-site: hsl(0, 0%, 8%);
+    --bg-card: hsl(0, 0%, 20%);  
+    --bg-container: hsl(0, 0%, 30%); 
+    --large-button: hsl(0, 0%, 30%);
+    --nav-buttons: hsl(0, 0%, 30%);
+    --square-link: hsl(0, 0%, 30%);
+    
+    --line-large-button-clear: hsl(0, 0%, 20%);
+    
+    --text-default: hsl(0, 0%, 95%);
+    
+    --line-photo-profile: hsl(0, 0%, 60%);
+    
+    --text-default: hsl(0, 0%, 98%);
+    --text-inverse: hsl(0, 0%, 3%);
+}
+}
+
+.card{
+    border-radius: 20px;
+}
+
+#content{ /* conteudo do menu do selo de perfil oficial */
+    border-radius: 20px 20px 0 0;
+}
+nav a, button{
+    border-radius: 8px;
+}
+.photo-profile{
+    border-radius: 6px;
+}
+.container{
+    border-radius: 8px;
+}
+.large-button, .square-links{
+    border-radius: 8px;
+}
+.large-button-clear{
+    border-radius: 3px;
+}
+
+
+body, html {
+    background-color: var(--bg-site);
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+html {
+    font-size: 16px;
+}
+html{
+    background-color: ;
+}
+body {
+    
+}
+.card{
+    background-color: ;
+}
+h2{
+    font-size: 1.7rem;
+    color: var(--text-default);
+}
+p{
+    color: var(--text-default);
+}
+.p{
+    font-size: 1rem;
+}
+a, a:visited{
+    color: var(--text-default);
+}
+footer{
+    color: var(--text-default);
+}
+.p-container{
+    display: flex;
+    flex-direction: column;
+    width: var(--width-xl-button-desk);
+    height: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: gol;
+    /* margin: -10px 0 -5px 0; */
+    margin-bottom: 10px;
+    align-items: start;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: var(--width-card-desk);
+    justify-content:;
+    align-items: center;
+    text-align: center; 
+    background-color: var(--bg-card);
+    gap: 10px;
+    padding: 30px 0;
+    box-shadow: inset 2px 2px 4px hsl(0, 0%, 100%),
+    2px 2px 10px hsl(0, 0%, 0%, 0.05);
+}
+
+
+nav{
+    background-color: orang;
+    display: flex;
+    flex-direction: row;
+    width: var(--width-container-desk);
+}
+nav a, button{
+    background: var(--nav-buttons);
+    padding: 10px 30px;
+}
+.link-button{
+    margin-left: auto;
+    padding: 10px!important;
+}
+
+.bottom-bar{
+    display: flex;
+    flex-direction: row;
+    width: var(--width-card-desk);
+    justify-content:center;
+    height: 60px;
+    align-items: center;
+    text-align: center; 
+    background-color: var(--bg-card);
+    gap: 40px;
+    /* padding: 30px 0; */
+    position: sticky;
+    bottom: 0;
+    /* box-shadow: inset 2px 2px 4px hsl(0, 0%, 100%),
+    2px 2px 10px hsl(0, 0%, 0%, 0.05); */
+    box-shadow: inset 2px 2px 4px hsl(0, 0%, 100%), 
+    0 -4px 3px -2px hsl(0, 0%, 1%, 0.07);
+       /* border-radius: 20px 20px 0 0; */
+    /* overflow-x: hidden;   */ 
+}
+.bottom-bar-active{
+  padding: 10px 30px;  
+  background: var(--nav-buttons);
+  border-radius: 3px;
+}
+
+
+.container{
+    width: var(--width-container-desk);
+    background-color: var(--bg-container);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 30px 0 30px 0; */
+    padding: 30px 0 30px 0;
+    gap:;
+}
+.container-clear{
+    width: var(--width-container-desk);
+    background-color: pin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 30px 0;
+    gap:15px;
+}
+.container-folders-expl{
+    width: var(--width-container-desk);
+    min-height:;
+    background-color: gree;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(
+    2,
+    minmax(100px, 1fr)
+  ); */
+  gap: 40px 10px;
+  padding: 30px 0 80px 0;
+}
+
+.block-folders{
+
+    width: 100%;
+  background: pin;  
+  border: solid 1px var(--line-large-button-clear);
+  padding: 30px 0 0 0;
+}
+
+.container-intro{
+    width: var(--width-container-desk);
+    background-color: pin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 0 0;
+    gap:;
+    position: relative;
+}
+.container-intro > .p-0-5-translucent{
+    margin-top: -10px;
+}
+.p-0-5-translucent{
+    color:;
+    opacity: 0.5;
+/*  margin-top: -10px; */
+}
+
+img.photo-profile{
+    width: 120px;
+    height: auto;
+    border: solid 1.5px var(--line-photo-profile);
+    position: relative;
+    z-index: ;
+      
+}
+.pop-up-photo-profile {
+    width: 40px;
+    position: absolute;
+    top: 8%;
+    right: 37%;
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.container-links{
+    width: var(--width-xl-button-desk);
+    height: 65px;
+    /* background-color: var(--large-button); */
+    display: flex;
+    flex-direction: row;
+    align-items: cente;
+    justify-content:center;
+    padding-left:;
+    box-sizing: border-box;
+    text-decoration: non;
+    gap: 15px;
+}
+
+.square-links{
+    display: flex;
+    width: 65px;
+    height: 65px;
+    background: var(--square-link);
+    justify-content:center;
+    align-items: center;
+}
+
+#link-1{
+    background-color: pink;
+}
+
+.aro-profile{
+    display: flex;
+    /* width: 140px;
+    height: 140px; */
+    padding: 10px;
+    border: solid 8px gold;
+    /* position: absolute; */
+    z-index: 3;
+    /* margin-top: -0px; */
+}
+
+.container-intro-p{
+    width: var(--width-container-desk);
+    background-color: yello;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:;
+}
+/* .container-space-20px{
+    display: flex;
+    height: 20px;
+} */
+/* .user-intro{
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    width: var(--width-container-desk);
+    height: 10vh;
+    align-items: cente;
+    justify-content:center;
+} nao deu certo minha ideia */
+
+/* .container-intro > h2{
+    background: gold;
+} */
+.validation-intro{
+    height: 20px;
+    border: solid 0.5px black;
+}
+.large-button .icon-button, .large-button-clear .icon-button{
+    display: flex;
+    justify-content: cente;
+    width: 30px;
+    height:35p;
+    background-color:gra;
+    object-fit: fil;
+}
+
+.large-button{
+    width: var(--width-xl-button-desk);
+    height: 65px;
+    background-color: var(--large-button);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    box-sizing: border-box;
+    text-decoration: non;
+    gap: 15px;
+}
+
+
+
+.large-button .icon-button img, svg, .large-button-clear .icon-button img, svg{
+    width: 100%;
+}
+.large-button-clear{
+    width: var(--width-xl-button-desk);
+    height: 65px;
+    background-color:;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0;
+    box-sizing: border-box;
+    text-decoration: non;
+    gap: 15px;
+}
+
+
+.large-button-clear:not(:last-child){
+    border-block-end: solid 1.5px var(--line-large-button-clear);
+}
+
+.links-group{
+    background-color: orang;
+    display: flex;
+    flex-direction: row;
+    width: var(--width-card-desk);
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 40px;
+}
+.links-group:last-child{
+    margin-top: 20px;
+}
+
+.banner-infos-web{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px 20px;
+    z-index: 999;
+    
+}
+
+.paragraph{
+    width: var(--width-xl-button-desk);
+    color: var(--text-default);
+    text-align: start;
+}
+
+button{
+    border: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* popup */
+#content {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, -40%) scale(0.95);
+  transition: transform 0.25s ease;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  width: var(--width-popup-desk);
+  height: 40vh;
+  /* max-width: 600px;
+  max-height: 400px; */
+  background: var(--bg-card);
+  padding:80px;
+  box-sizing: border-box;
+  gap: 10px;
+}
+#content img {
+    width: 100px;
+}
+
+/* quando abre */
+.modal.active #content {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* botão fechar */
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
