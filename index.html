@@ -1,27 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-        
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO básico -->
-    <title>YourWebsite</title>
-    <meta name="description" content="Descrição breve e clara do que o site faz.">
-    <meta name="keywords" content="palavras, chave, relacionadas">
-    <meta name="author" content="Seu Nome ou Empresa">
-    
+    <title>Path: homepage</title> 
+    <meta name="description" content="Iniciativa Criativa que conecta o físico com digital"> 
+    <meta name="keywords" content="Path, path, qr code, msiq, marlon siqueira"> 
+    <meta name="author" content="Path">
+
     <!-- Evita que a página seja indexada enquanto está em construção -->
-    <meta name="robots" content="noindex, nofollow">    
+    <meta name="robots" content="noindex, nofollow">
     
-    <!-- Define versão canônica da página (evita conteúdo duplicado) -->
-    <link rel="canonical" href="https://mrzzo.github.io/pth/">
-  
+    <!-- Open Graph, usados por Facebook, Instagram, WhatsApp, etc. -->
+    <meta property="og:title" content="Path: homepage">
+    <meta property="og:description" content="Iniciativa Criativa que conecta o físico com digital">
+    <meta property="og:image" content="../imagens/img-path-opgr.webp">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Otimizado para X/Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YourWebsite - Portfólio de Arte">
+    <meta name="twitter:description" content="Veja minhas criações digitais.">
+    <meta name="twitter:image" content="https://www.yourwebsite.com/imagens/share-image.png">
+    <meta name="twitter:site" content="@SeuPerfil">
+    <meta name="twitter:creator" content="@SeuPerfil">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Mulish:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilo.css">
-    
+    <link rel="stylesheet" href="hover.css">
+    <!-- <link rel="stylesheet" href="customized.css"> -->
+
     <link rel="icon" href="imagens/favicon.png" type="image/png">
-    <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon.png">        
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="imagens/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="imagens/favicon-512x512.png">
     <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png" sizes="180x180">
@@ -29,36 +46,67 @@
 
 <body>
 
+    <div class="card">
     <header>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Sobre</a>
-      <a href="#">Contato</a>
-    </nav>
-  </header>
+        <nav>
+            <a href="home.html">Path</a>                     
+            <button class="link-button" onclick="share()">i</button>
+        </nav>
+    </header>
 
-  <!-- Conteúdo principal -->
-  <main id="main">
-    <section id="intro">
-      <h1>Bem-vindo ao YourWebsite</h1>
-      <p>Um texto de apresentação do seu site.</p>
-    </section>
+    <!-- Conteúdo principal -->
 
-    <section id="servicos">
-      <h2>Nossos Serviços</h2>
-      <p>Descreva o que você oferece aqui.</p>
-    </section>
-  </main>
+        <section class="container-intro">
+            <img src="../images/teste.webp" class="photo-profile" alt="">
+            <h1>Bem-vindo(a) ao Path</h1>
+            <h3>Your-Web-Way.</h3>
+            <p>Um novo jeito de conectar o digital com o físico</p>
+        </section>
 
-  <script src="texto-footer.js" defer></script>
-     
-<footer>
-    <p>YourWebsite © <span id="current-year"></span></p>
-</footer>
+        <div class="container">
+            <h3>Iniciativa Criativa</h3>
+            <div class="p-container"><p>Path: Routes</p></div>
+            <p class="paragraph">lalalalal</p>
+            <br>
+            <div class="p-container"><p>Path: Folders</p></div>
+            <p class="paragraph">lalalalal</p>
+        </div>
 
-    <script>
-        document.querySelector('#current-year').textContent = new Date().getFullYear();
-    </script>
+    <div class="bottom-bar">
+            <a href="" class="bottom-bar-active">home</a>
+            <a href="folders-expl.html" class="p-0-5-translucent">folders explorer</a>
+        </div>
+        
+        <div class="links-group">
+            <a href="" class="a" translate="no">cookie</a>
+            <a href="" class="a" translate="no">report</a>
+            <a href="" class="a">privacidade</a>
+        </div>
+
+        <footer id="footer" class="links-group">
+            Path &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script> from Marlon Siqueira
+        </footer>
+        
+        
+
+<script>
+function share() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: "Veja isso:",
+      url: window.location.href
+    });
+  } else {
+    alert("Compartilhamento não suportado");
+  }
+}
+</script>
+
+</div>
 </body>
+
 </html>
-            
