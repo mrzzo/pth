@@ -3,17 +3,23 @@
     --bg-site: hsl(0, 0%, 85%);
     --bg-card: hsl(0, 0%, 95%);  
     --bg-container: hsl(0, 0%, 100%); 
-    --bg-container-hover: hsl(0, 0%, 85%); 
+    /* --bg-container-hover: hsl(0, 0%, 85%);  */
     --bg-bottom-bar: hsl(0, 0%, 85%); 
     --large-button: hsl(0, 0%, 100%);
     --nav-buttons: hsl(0, 0%, 100%);
     --square-link: hsl(0, 0%, 100%);       
     
+    --box-shadow-glow: hsl(0, 0%, 100%);
+    --box-shadow-umbra: hsl(0, 0%, 0%, 0.05); 
+    
     --width-card-desk: 50vw;
     --width-container-desk:45vw;
     --width-xl-button-desk:40vw;
+    --width-xl-button-desk-clear:40vw;
     --width-popup-desk:35vw;
     --width-block-folders: 20vw;
+    
+    --card-box-shadow-wh: 2px;
     
     --line-large-button-clear: hsl(0, 0%, 85%);
     
@@ -23,40 +29,95 @@
     --text-default: hsl(0, 0%, 3%);
     --text-inverse: hsl(0, 0%, 98%);
     
-    /* --texto-preto: black;
-    --texto-branco: ;
-    --texto-branco: ;
-    --text-bttn-dific: black;
-    --text-color-w: white;
-    --text-clr-comparacao: red;
+    --square-link-1: pink;
+    --square-link-2: pink;
+    --square-link-3: pink;
+    --square-link-4: pink;
+    --square-link-5: pink;
     
-     tamanho texto 
-    --tamanho-options: 20px;
-    --tamanho-nav-button: 23px;
-     gap 
-    --gap-div-options: 30px;
-    --gap-div-options-mob: 15px; */
 }
-
 /* Modo Noturno */
 @media (prefers-color-scheme: dark) {  
     :root {
-    --bg-site: hsl(0, 0%, 8%);
+        --bg-site: hsl(0, 0%, 8%);
     --bg-card: hsl(0, 0%, 20%);  
     --bg-container: hsl(0, 0%, 30%); 
+    --bg-bottom-bar: hsl(0, 0%, 85%); 
     --large-button: hsl(0, 0%, 30%);
     --nav-buttons: hsl(0, 0%, 30%);
     --square-link: hsl(0, 0%, 30%);
     
-    --line-large-button-clear: hsl(0, 0%, 20%);
+    --box-shadow-glow: hsl(0, 0%, 37%);
+    --box-shadow-umbra: hsl(0, 0%, 0%, 0.5); 
     
-    --text-default: hsl(0, 0%, 95%);
+    --line-large-button-clear: hsl(0, 0%, 15%);
+
+    --line-photo-profile: hsl(0, 0%, 5%);
     
-    --line-photo-profile: hsl(0, 0%, 60%);
-    
-    --text-default: hsl(0, 0%, 98%);
+    --text-default: hsl(0, 0%, 90%);
     --text-inverse: hsl(0, 0%, 3%);
+    
+    --width-card-desk: 50vw;
+    --width-container-desk:45vw;
+    --width-xl-button-desk:40vw;
+    --width-xl-button-desk-clear:40vw;
+    --width-popup-desk:35vw;
+    --width-block-folders: 20vw;
+    
+    --card-box-shadow-wh: 1px;
+    
+    --square-link-1: pink;
+    --square-link-2: pink;
+    --square-link-3: pink;
+    --square-link-4: pink;
+    --square-link-5: pink;
+    }
 }
+
+.text-y-w-w, nav a {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+p, a, button, h1, h2, h3, h4, h5, h6, footer {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.text-y-w-w {
+  font-size: 1.5rem;
+}
+
+.material-symbols-outlined{
+  font-variation-settings:
+    "OPSZ" 20,
+    "FILL" 0,
+    "GRAD" 0;
+}
+
+.icon-light{
+  font-variation-settings:
+    "OPSZ" 20,
+    "wght" 300,
+    "FILL" 0,
+    "GRAD" 0;
+}
+
+.icon-regular{
+  font-variation-settings:
+    "OPSZ" 20,
+    "wght" 400,
+    "FILL" 0,
+    "GRAD" 0;
 }
 
 .card{
@@ -66,7 +127,7 @@
 #content{ /* conteudo do menu do selo de perfil oficial */
     border-radius: 20px 20px 0 0;
 }
-nav a, button{
+nav a, nav button{
     border-radius: 8px;
 }
 .photo-profile{
@@ -78,9 +139,9 @@ nav a, button{
 .large-button, .square-links{
     border-radius: 8px;
 }
-.large-button-clear{
+/* .large-button-clear{
     border-radius: 3px;
-}
+} */
 
 
 body, html {
@@ -105,6 +166,8 @@ body {
 }
 h2{
     font-size: 1.7rem;
+}
+h1, h2, h3, h4, h5, h6, button {
     color: var(--text-default);
 }
 p{
@@ -115,6 +178,7 @@ p{
 }
 a, a:visited{
     color: var(--text-default);
+    text-decoration: non;
 }
 footer{
     color: var(--text-default);
@@ -122,7 +186,7 @@ footer{
 .p-container{
     display: flex;
     flex-direction: column;
-    width: var(--width-xl-button-desk);
+    width: var(--width-xl-button-desk-clear);
     height: 20px;
     font-size: 0.9rem;
     font-weight: bold;
@@ -131,6 +195,11 @@ footer{
     margin-bottom: 10px;
     align-items: start;
     justify-content: center;
+}
+
+.material-symbols-outlined{
+    background: yello;
+    text-decoration: none!important;
 }
 
 .card {
@@ -143,8 +212,8 @@ footer{
     background-color: var(--bg-card);
     gap: 10px;
     padding: 30px 0;
-    box-shadow: inset 2px 2px 4px hsl(0, 0%, 100%),
-    2px 2px 10px hsl(0, 0%, 0%, 0.05);
+    box-shadow: inset var(--card-box-shadow-wh) var(--card-box-shadow-wh) 4px var(--box-shadow-glow),
+    2px 2px 10px var(--box-shadow-umbra);
 }
 
 
@@ -154,9 +223,14 @@ nav{
     flex-direction: row;
     width: var(--width-container-desk);
 }
-nav a, button{
+nav a, nav button{
+    display: flex;
+    justify-content:center;
+    height: 40px;
+    align-items: center;
+    text-align: center; 
     background: var(--nav-buttons);
-    padding: 10px 30px;
+    padding: 0 40px;
 }
 .link-button{
     margin-left: auto;
@@ -178,11 +252,12 @@ nav a, button{
     bottom: 0;
     /* box-shadow: inset 2px 2px 4px hsl(0, 0%, 100%),
     2px 2px 10px hsl(0, 0%, 0%, 0.05); */
-    box-shadow: inset 2px 2px 4px hsl(0, 0%, 100%), 
-    0 -4px 3px -2px hsl(0, 0%, 1%, 0.07);
+    box-shadow: inset 0 2.5px 4px var(--box-shadow-glow), 
+    0 -4px 3px -2px var(--box-shadow-umbra);
        /* border-radius: 20px 20px 0 0; */
-    /* overflow-x: hidden;   */ 
+    /* overflow-x: hidden;   */  
 }
+
 .bottom-bar-active{
   padding: 10px 30px;  
   background: var(--nav-buttons);
@@ -228,7 +303,7 @@ nav a, button{
     width: 100%;
   background: pin;  
   border: solid 1px var(--line-large-button-clear);
-  padding: 30px 0 0 0;
+  padding: 40px 0 20px 0;
 }
 
 .container-intro{
@@ -265,6 +340,7 @@ img.photo-profile{
     right: 37%;
     border: solid 1px black;
     border-radius: 30px;
+    z-index: 1;
 }
 
 .container-links{
@@ -291,7 +367,8 @@ img.photo-profile{
 }
 
 #link-1{
-    background-color: pink;
+    background-color: var(--square-link-1);
+    color: contrast-color(var(--square-link-1));
 }
 
 .aro-profile{
@@ -362,7 +439,7 @@ img.photo-profile{
     width: 100%;
 }
 .large-button-clear{
-    width: var(--width-xl-button-desk);
+    width: var(--width-xl-button-desk-clear);
     height: 65px;
     background-color:;
     display: flex;
@@ -403,13 +480,14 @@ img.photo-profile{
 }
 
 .paragraph{
-    width: var(--width-xl-button-desk);
+    width: var(--width-xl-button-desk-clear);
     color: var(--text-default);
     text-align: start;
 }
 
 button{
     border: none;
+    background: transparent;
 }
 
 .modal {
