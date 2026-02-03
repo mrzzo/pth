@@ -1,6 +1,7 @@
 :root {
-    /* background */
+    /* background LIGHT*/
     --bg-site: hsl(0, 0%, 85%);
+    --bg-medium: hsl(0, 0%, 90%); /* para o @media cell */
     --bg-card: hsl(0, 0%, 95%);  
     --bg-container: hsl(0, 0%, 100%); 
     /* --bg-container-hover: hsl(0, 0%, 85%);  */
@@ -23,7 +24,7 @@
     
     --line-large-button-clear: hsl(0, 0%, 85%);
     
-    --line-photo-profile: hsl(0, 0%, 40%);
+    --line-photo-profile: hsl(0, 0%, 10%);
    
     /* cor texto */
     --text-default: hsl(0, 0%, 3%);
@@ -34,25 +35,26 @@
     --square-link-3: pink;
     --square-link-4: pink;
     --square-link-5: pink;
-    
 }
 /* Modo Noturno */
 @media (prefers-color-scheme: dark) {  
     :root {
+        /* background DARK */
         --bg-site: hsl(0, 0%, 8%);
-    --bg-card: hsl(0, 0%, 20%);  
-    --bg-container: hsl(0, 0%, 30%); 
+        --bg-medium: hsl(0, 0%, 13%); /* para o @media cell */
+    --bg-card: hsl(0, 0%, 18%);  
+    --bg-container: hsl(0, 0%, 25%); 
     --bg-bottom-bar: hsl(0, 0%, 85%); 
     --large-button: hsl(0, 0%, 30%);
     --nav-buttons: hsl(0, 0%, 30%);
     --square-link: hsl(0, 0%, 30%);
     
-    --box-shadow-glow: hsl(0, 0%, 37%);
+    --box-shadow-glow: hsl(0, 0%, 35%);
     --box-shadow-umbra: hsl(0, 0%, 0%, 0.5); 
     
     --line-large-button-clear: hsl(0, 0%, 15%);
 
-    --line-photo-profile: hsl(0, 0%, 5%);
+    --line-photo-profile: hsl(0, 0%, 90%);
     
     --text-default: hsl(0, 0%, 90%);
     --text-inverse: hsl(0, 0%, 3%);
@@ -70,7 +72,7 @@
     --square-link-2: pink;
     --square-link-3: pink;
     --square-link-4: pink;
-    --square-link-5: pink;
+    --square-link-5: pink;   
     }
 }
 
@@ -93,8 +95,22 @@ p, a, button, h1, h2, h3, h4, h5, h6, footer {
   font-weight: <weight>;
   font-style: normal;
 }
+
+p, a, a:visited, h1, h2, h3, h4, h5, h6, button, .paragraph, #footer {
+    color: contrast-color(var(--bg-medium));
+}
+a, a:visited{
+    text-decoration: none;
+}
+
 .text-y-w-w {
   font-size: 1.5rem;
+}
+
+.text-link, .a{
+    text-decoration: underline 0.9px solid hsl(0, 0%, 50%, 0.4);  
+    text-underline-offset: 2px;            /* Distância entre o texto e a linha */
+
 }
 
 .material-symbols-outlined{
@@ -119,13 +135,38 @@ p, a, button, h1, h2, h3, h4, h5, h6, footer {
     "FILL" 0,
     "GRAD" 0;
 }
+.icon-fill{
+  font-variation-settings:
+    "OPSZ" 20,
+    "wght" 400,
+    "FILL" 1,
+    "GRAD" 0;
+}
+.icon-intro{
+  background: linear-gradient(
+    120deg,
+    #fff9c4 0%,
+    #ffe082 15%,
+    #f6d365 30%,
+    #d4af37 50%,
+    #b38b2e 65%,
+    #8c6b1f 80%,
+    #fff9c4 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.4),
+    0 -1px 0 rgba(0,0,0,0.2);
+}
 
 .card{
     border-radius: 20px;
 }
 
 #content{ /* conteudo do menu do selo de perfil oficial */
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
 }
 nav a, nav button{
     border-radius: 8px;
@@ -167,21 +208,14 @@ body {
 h2{
     font-size: 1.7rem;
 }
-h1, h2, h3, h4, h5, h6, button {
-    color: var(--text-default);
-}
-p{
-    color: var(--text-default);
-}
+
+
 .p{
     font-size: 1rem;
 }
-a, a:visited{
-    color: var(--text-default);
-    text-decoration: non;
-}
+
 footer{
-    color: var(--text-default);
+    /* color: var(--text-default); */
 }
 .p-container{
     display: flex;
@@ -197,9 +231,25 @@ footer{
     justify-content: center;
 }
 
-.material-symbols-outlined{
+/* .material-symbols-outlined{
+    background: yellow; */
+.h2-intro{
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
     background: yello;
-    text-decoration: none!important;
+}
+.fa-brands{
+    background: yello;
+}
+/* .large-button{
+  text-decoration: underline;
+} */
+
+.large-button .material-symbols-outlined{
+  text-decoration: none;
 }
 
 .card {
@@ -235,6 +285,10 @@ nav a, nav button{
 .link-button{
     margin-left: auto;
     padding: 10px!important;
+}
+.link-locked{
+    margin-left: auto;
+    padding-right: 20px;
 }
 
 .bottom-bar{
@@ -336,7 +390,7 @@ img.photo-profile{
 .pop-up-photo-profile {
     width: 40px;
     position: absolute;
-    top: 8%;
+    top: 6%;
     right: 37%;
     border: solid 1px black;
     border-radius: 30px;
@@ -368,7 +422,7 @@ img.photo-profile{
 
 #link-1{
     background-color: var(--square-link-1);
-    color: contrast-color(var(--square-link-1));
+    /* color: contrast-color(var(--square-link-1)); */
 }
 
 .aro-profile{
@@ -481,13 +535,16 @@ img.photo-profile{
 
 .paragraph{
     width: var(--width-xl-button-desk-clear);
-    color: var(--text-default);
+  /*   color: var(--text-default); */
     text-align: start;
 }
 
 button{
     border: none;
     background: transparent;
+    display: flex;
+    align-items: cente;
+    justify-content:center;
 }
 
 .modal {
@@ -515,7 +572,7 @@ button{
 /* popup */
 #content {
   position: absolute;
-  bottom: -20%;
+  bottom: 0%;
   left: 50%;
   transform: translate(-50%, -40%) scale(0.95);
   transition: transform 0.25s ease;
@@ -531,10 +588,12 @@ button{
   background: var(--bg-card);
   padding:80px;
   box-sizing: border-box;
-  gap: 10px;
+  gap: 40px; 
+  box-shadow: inset var(--card-box-shadow-wh) var(--card-box-shadow-wh) 4px var(--box-shadow-glow),
+    2px 2px 10px var(--box-shadow-umbra);
 }
-#content img {
-    width: 100px;
+#content span {
+    scale: 2.3;
 }
 
 /* quando abre */
@@ -553,3 +612,4 @@ button{
   font-size: 20px;
   cursor: pointer;
 }
+
