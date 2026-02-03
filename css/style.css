@@ -422,7 +422,7 @@ img.photo-profile{
 
 #link-1{
     background-color: var(--square-link-1);
-    /* color: contrast-color(var(--square-link-1)); */
+    color: contrast-color(var(--square-link-1));
 }
 
 .aro-profile{
