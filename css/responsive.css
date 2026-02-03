@@ -9,10 +9,15 @@
         --width-block-folders: 45vw;
     }
     body, html{        
-        background-color: ;   
+        background-color:;   
     }
 }
 
+@media (426px <= width <= 767px){
+   .pop-up-photo-profile{
+       display: none;
+   } 
+}
 
 /*Tela de Celular*/
 @media screen and (max-width: 425px) {
@@ -29,6 +34,8 @@
     }
     .card{
         border-radius: 0;
+        box-shadow: none;
+        background-color: var(--bg-medium);
     }
     nav{
         width: var(--width-xl-button-desk);
@@ -43,6 +50,11 @@
     position: absolute;
     top: 8%;
     right: 29%;
+    }
+   /* .square-links{
+    width: 35px;
+    height: 35px;
+    } */
 }
 
 /*Tela de Celular MUITO pequenas*/
