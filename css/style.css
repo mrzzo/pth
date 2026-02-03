@@ -97,7 +97,7 @@ p, a, button, h1, h2, h3, h4, h5, h6, footer {
 }
 
 p, a, a:visited, h1, h2, h3, h4, h5, h6, button, .paragraph, #footer {
-    color: contrast-color(var(--bg-medium));
+    color: var(--text-default);
 }
 a, a:visited{
     text-decoration: none;
