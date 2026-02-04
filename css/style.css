@@ -30,7 +30,7 @@
     --text-default: hsl(0, 0%, 3%);
     --text-inverse: hsl(0, 0%, 98%);
     
-    --square-link-1: pink;
+    --square-link-1: darkblue;
     --square-link-2: pink;
     --square-link-3: pink;
     --square-link-4: pink;
@@ -74,6 +74,92 @@
     --square-link-4: pink;
     --square-link-5: pink;   
     }
+}
+
+/* Forçar light */
+[data-theme="light"] {
+  /* background LIGHT*/
+    --bg-site: hsl(0, 0%, 85%);
+    --bg-medium: hsl(0, 0%, 90%); /* para o @media cell */
+    --bg-card: hsl(0, 0%, 95%);  
+    --bg-container: hsl(0, 0%, 100%); 
+    /* --bg-container-hover: hsl(0, 0%, 85%);  */
+    --bg-bottom-bar: hsl(0, 0%, 85%); 
+    --large-button: hsl(0, 0%, 100%);
+    --nav-buttons: hsl(0, 0%, 100%);
+    --square-link: hsl(0, 0%, 100%);       
+    
+    --box-shadow-glow: hsl(0, 0%, 100%);
+    --box-shadow-umbra: hsl(0, 0%, 0%, 0.05); 
+    
+    --width-card-desk: 50vw;
+    --width-container-desk:45vw;
+    --width-xl-button-desk:40vw;
+    --width-xl-button-desk-clear:40vw;
+    --width-popup-desk:35vw;
+    --width-block-folders: 20vw;
+    
+    --card-box-shadow-wh: 2px;
+    
+    --line-large-button-clear: hsl(0, 0%, 85%);
+    
+    --line-photo-profile: hsl(0, 0%, 10%);
+   
+    /* cor texto */
+    --text-default: hsl(0, 0%, 3%);
+    --text-inverse: hsl(0, 0%, 98%);
+    
+    --square-link-1: darkblue;
+    --square-link-2: pink;
+    --square-link-3: pink;
+    --square-link-4: pink;
+    --square-link-5: pink;
+}
+
+/* Forçar dark */
+[data-theme="dark"] {
+   /* background DARK */
+        --bg-site: hsl(0, 0%, 8%);
+        --bg-medium: hsl(0, 0%, 13%); /* para o @media cell */
+    --bg-card: hsl(0, 0%, 18%);  
+    --bg-container: hsl(0, 0%, 25%); 
+    --bg-bottom-bar: hsl(0, 0%, 85%); 
+    --large-button: hsl(0, 0%, 30%);
+    --nav-buttons: hsl(0, 0%, 30%);
+    --square-link: hsl(0, 0%, 30%);
+    
+    --box-shadow-glow: hsl(0, 0%, 35%);
+    --box-shadow-umbra: hsl(0, 0%, 0%, 0.5); 
+    
+    --line-large-button-clear: hsl(0, 0%, 15%);
+
+    --line-photo-profile: hsl(0, 0%, 90%);
+    
+    --text-default: hsl(0, 0%, 90%);
+    --text-inverse: hsl(0, 0%, 3%);
+    
+    --width-card-desk: 50vw;
+    --width-container-desk:45vw;
+    --width-xl-button-desk:40vw;
+    --width-xl-button-desk-clear:40vw;
+    --width-popup-desk:35vw;
+    --width-block-folders: 20vw;
+    
+    --card-box-shadow-wh: 1px;
+    
+    --square-link-1: pink;
+    --square-link-2: pink;
+    --square-link-3: pink;
+    --square-link-4: pink;
+    --square-link-5: pink;   
+}
+
+* {
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    fill 250ms ease;
 }
 
 .text-y-w-w, nav a {
@@ -422,7 +508,7 @@ img.photo-profile{
 
 #link-1{
     background-color: var(--square-link-1);
-    color: contrast-color(var(--square-link-1));
+    color: contrast-color(var(--square-link-1))!important;
 }
 
 .aro-profile{
@@ -523,6 +609,11 @@ img.photo-profile{
 .links-group:last-child{
     margin-top: 20px;
 }
+.icons-links-group{
+    background: yello;
+    font-size: 20px;
+    padding: 10px;
+}
 
 .banner-infos-web{
     position: fixed;
@@ -613,3 +704,15 @@ button{
   cursor: pointer;
 }
 
+.icon-light-link,
+.icon-dark-link {
+  display: none;
+}
+
+[data-theme="light"] .icon-light-link {
+  display: inline-flex;
+}
+
+[data-theme="dark"] .icon-dark-link {
+  display: inline-flex;
+}
