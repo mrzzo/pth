@@ -23,6 +23,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Mulish:wght@400&display=swap" rel="stylesheet">
     
+    <script src="../js/button-share.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/hover.css">
     <link rel="stylesheet" href="../css/responsive.css">
@@ -109,9 +112,12 @@
         </div>
         
         <div class="links-group">
-            <a href="" class="a" translate="no">cookie</a>
-            <a href="" class="a" translate="no">report</a>
-            <a href="" class="a">privacidade</a>
+            <a href="" class="a" translate="no" target="_blank" rel="noopener noreferrer">cookie</a>           
+            <button onclick="toggleTheme()" class="theme-toggle">
+                <span class="icon-dark-link material-symbols-outlined icon-fill icons-links-group">dark_mode</span>
+                <span class="icon-light-link material-symbols-outlined icon-fill icons-links-group">light_mode</span>
+            </button>
+            <a href="" class="a" translate="no" target="_blank" rel="noopener noreferrer">report</a>
         </div>
 
         <footer id="footer" class="links-group">
