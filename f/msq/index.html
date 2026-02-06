@@ -13,23 +13,27 @@
     <!-- Evita que a página seja indexada enquanto está em construção -->
     <meta name="robots" content="noindex, nofollow">
 
+    <meta name="theme-color" content="#ffffff" id="theme-color-meta">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-       
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://kit.fontawesome.com/28554f1995.js" crossorigin="anonymous"></script>
-    
+
     <script src="../../js/button-share.js" defer></script>
     <script src="../../js/theme.js" defer></script>
-    
+
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/hover.css">
     <link rel="stylesheet" href="../../css/responsive.css">
     <!-- <link rel="stylesheet" href="customized.css"> -->
 
-    <link rel="icon" href="../../images/favicon.svg" type="image/svg+xml">
+    <!-- <link rel="icon" href="../../images/favicon.svg" type="image/svg+xml"> -->
+    <link rel="icon" href="../../images/favicon-light.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="../../images/favicon-dark.svg" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../../images/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../../images/favicon-512x512.png">
@@ -60,8 +64,8 @@
                 <img src="../../images/profile-base.jpg" class="pop-up-photo-profile" alt="">
                 <img src="../../images/profile-base.jpg" class="photo-profile" alt="">
             </div>
-            <h2 class="h2-intro">Base Template<button id="menuBtn" onclick="menu1.hidden^=1"><span class="material-symbols-outlined icon-fill icon-intro">Verified</span></button></h2>         
-            <p class="p-0-5-translucent">/xxx</p>
+            <h2 class="h2-intro">Marlon Siqueira<button id="menuBtn" onclick="menu1.hidden^=1"><span class="material-symbols-outlined icon-fill icon-intro">Verified</span></button></h2>
+            <p class="p-0-5-translucent">/msq</p>
         </section>
 
 
@@ -80,16 +84,27 @@
         <script>
             const btn = document.getElementById("menuBtn");
               const modal = document.getElementById("menu1");
-              const overlay = document.querySelector(".overlay");
+              const overlay = modal.querySelector(".overlay");
               const closeBtn = document.getElementById("closeBtn");
             
-              btn.onclick = () => modal.classList.add("active");
-              closeBtn.onclick = closeModal;
-              overlay.onclick = closeModal;
+              let scrollY = 0;
+            
+              btn.onclick = () => {
+                scrollY = window.scrollY;
+                document.body.classList.add("modal-open");
+                document.body.style.top = `-${scrollY}px`;
+                modal.classList.add("active");
+              };
             
               function closeModal() {
                 modal.classList.remove("active");
+                document.body.classList.remove("modal-open");
+                document.body.style.top = "";
+                window.scrollTo(0, scrollY);
               }
+            
+              closeBtn.onclick = closeModal;
+              overlay.onclick = closeModal;
         </script>
 
 
@@ -197,7 +212,7 @@
         </div>
 
         <div class="links-group">
-            <a href="" class="a" translate="no" target="_blank" rel="noopener noreferrer">cookie</a>           
+            <a href="" class="a" translate="no" target="_blank" rel="noopener noreferrer">cookie</a>
             <button onclick="toggleTheme()" class="theme-toggle">
                 <span class="icon-dark-link material-symbols-outlined icon-fill icons-links-group">dark_mode</span>
                 <span class="icon-light-link material-symbols-outlined icon-fill icons-links-group">light_mode</span>
@@ -215,17 +230,16 @@
 
 
     </div>
-    
+
     <!-- <div class="banner-infos-web">
        <p>Path &copy; <script>document.write(new Date().getFullYear())</script></p>
     </div> -->
 
     <!-- <script src="theme-init.js"></script> -->
-    
-  <script>
-      
-  </script>  
-    
+
+    <script>
+    </script>
+
 
 </body>
 
