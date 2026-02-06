@@ -1,13 +1,46 @@
-function toggleTheme() {
-  const root = document.documentElement;
-  const isDark = root.getAttribute("data-theme") === "dark";
-  const newTheme = isDark ? "light" : "dark";
+let hasUserOverride = false;
 
-  root.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
+const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function applySystemTheme() {
+  document.documentElement.removeAttribute('data-theme');
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme") || "light";
-  document.documentElement.setAttribute("data-theme", savedTheme);
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+// Toggle simples: só light <-> dark
+function toggleTheme() {
+  hasUserOverride = true;
+
+  const isDark =
+    document.documentElement.getAttribute('data-theme') === 'dark' ||
+    (!document.documentElement.hasAttribute('data-theme') && mediaQuery.matches);
+
+  const nextTheme = isDark ? 'light' : 'dark';
+  applyTheme(nextTheme);
+  updateBrowserThemeColor(nextTheme);
+}
+
+// Se o sistema mudar e NÃO houver override, respeita
+mediaQuery.addEventListener('change', () => {
+  if (!hasUserOverride) {
+    applySystemTheme();
+  }
 });
+
+// Ao carregar: nunca força nada
+window.addEventListener('DOMContentLoaded', () => {
+  applySystemTheme();
+});
+
+function updateBrowserThemeColor(theme) {
+  const meta = document.getElementById('theme-color-meta');
+  if (!meta) return;
+
+  meta.setAttribute(
+    'content',
+    theme === 'dark' ? '#0f0f0f' : '#ffffff'
+  );
+}
