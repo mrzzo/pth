@@ -10,7 +10,7 @@ root.innerHTML = `
             <span class="icon-dark-link material-symbols-outlined icon-fill icons-links-group">dark_mode</span>
             <span class="icon-light-link material-symbols-outlined icon-fill icons-links-group">light_mode</span>
         </button>
-        <a href="pth/cookies.html" class="a" rel="noopener noreferrer">cookie</a>
+        <a href="cookies.html" class="a" rel="noopener noreferrer">cookie</a>
     </div>
     
     <br>
