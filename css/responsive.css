@@ -14,9 +14,9 @@
 }
 
 @media (426px <= width <= 767px){
-   .pop-up-photo-profile{
+   /* .pop-up-photo-profile{
        display: none;
-   } 
+   }  */
 }
 
 /*Tela de Celular*/
@@ -37,7 +37,7 @@
         box-shadow: none;
         background-color: var(--bg-medium);
     }
-    nav{
+    .nav{
         width: var(--width-xl-button-desk);
     }
     #content {
@@ -45,12 +45,12 @@
   padding:20px 40px;
   border-radius: 20px;
     }
-    .pop-up-photo-profile {
+    /* .pop-up-photo-profile {
     width: 40px;
     position: absolute;
     top: 8%;
     right: 29%;
-    }
+    } */
    /* .square-links{
     width: 35px;
     height: 35px;
