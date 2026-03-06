@@ -323,6 +323,7 @@ h2{
     justify-content:center;
     text-align: center;
     background: yello;
+    text-decoration: none!important;
 }
 .fa-brands{
     background: yello;
