@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const REDIRECT_ENABLED = true;
-  const TIMEOUT_SECONDS = 5;
+  const TIMEOUT_SECONDS = 5000;
   const redirectUrl = document.body.dataset.redirect;
 
   if (!window.PathUI) {
