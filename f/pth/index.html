@@ -184,8 +184,24 @@
 
     <!-- <script src="theme-init.js"></script> -->
 
-    <script>
-    </script>
+    <!-- <script>
+        let lastClick = 0;
+
+document.querySelectorAll(".large-button").forEach(btn => {
+    btn.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const now = new Date().getTime();
+
+        if (now - lastClick < 400) {
+            window.location.href = this.href;
+        }
+
+        lastClick = now;
+    });
+});
+    </script> -->
+    
 
 
 </body>

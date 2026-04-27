@@ -6,14 +6,14 @@ root.innerHTML = `
     
     <div class="links-group">
         <a href="" class="a" rel="noopener noreferrer">reportar</a>       
-        <a href="mrzzo.github.io/pth/cookies.html" class="a" rel="noopener noreferrer">cookie</a>
+        <a href="https:/mrzzo.github.io/pth/cookies.html" class="a" rel="noopener noreferrer">cookie</a>
     </div>
     
     <br>
     
     <div class="links-group">       
         <p>Path &copy; ${year}</p>                
-        <p>v1.2.1</p>
+        <p>v1.2.2</p>
     </div>
     
     <div class="links-group">

@@ -10,14 +10,14 @@ root.innerHTML = `
             <span class="icon-dark-link material-symbols-outlined icon-fill icons-links-group">dark_mode</span>
             <span class="icon-light-link material-symbols-outlined icon-fill icons-links-group">light_mode</span>
         </button>
-        <a href="mrzzo.github.io/pth/cookies.html" class="a" rel="noopener noreferrer">cookie</a>
+        <a href="https:/mrzzo.github.io/pth/cookies.html" class="a" rel="noopener noreferrer">cookie</a>
     </div>
     
     <br>
     
     <div class="links-group">       
         <p>Path &copy; ${year}</p>                
-        <p>v1.2.1</p>
+        <p>v1.2.2</p>
     </div>
     
     <div class="links-group">
