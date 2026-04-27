@@ -6,7 +6,7 @@ root.innerHTML = `
     
     <div class="links-group">
         <a href="" class="a" rel="noopener noreferrer">reportar</a>       
-        <a href="https:/mrzzo.github.io/pth/cookies.html" class="a" rel="noopener noreferrer">cookie</a>
+        <a href="https://mrzzo.github.io/pth/cookies.html" class="a" rel="noopener noreferrer">cookie</a>
     </div>
     
     <br>
