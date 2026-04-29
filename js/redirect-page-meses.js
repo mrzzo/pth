@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const REDIRECT_ENABLED = true;
-  const TIMEOUT_SECONDS = 5;
+  const TIMEOUT_SECONDS = 3;
 
   const monthRoutes = {
     jan: "https://www.notion.so/JANEIRO-2df1b43e1e8c800d83d8c7d260a22607?source=copy_link",

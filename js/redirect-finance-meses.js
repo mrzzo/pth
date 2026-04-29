@@ -1,34 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const REDIRECT_ENABLED = true;
-  const TIMEOUT_SECONDS = 5;
+  const TIMEOUT_SECONDS = 3;
+  const VALID_YEAR = 2026; // ano que você quer que funcione
 
   const monthRoutes = {
-    jan: "https://www.youtube.com",
-    fev: "https://seusite.com/fevereiro",
-    mar: "https://www.twitch.tv",
-    abr: "https://seusite.com/abril",
-    mai: "https://seusite.com/maio",
-    jun: "https://seusite.com/junho",
-    jul: "https://seusite.com/julho",
-    ago: "https://seusite.com/agosto",
-    set: "https://seusite.com/setembro",
-    out: "https://seusite.com/outubro",
-    nov: "https://seusite.com/novembro",
-    dez: "https://seusite.com/dezembro"
+    0: "", // jan
+    1: "",
+    2: "",
+    3: "",
+    4: "https://docs.google.com/spreadsheets/d/1SvWtGoZkXNNVIlg3iWiMsySCdjp72OEJsk9uQs8zalQ/edit?gid=239692972#gid=239692972",
+    5: "https://seusite.com/junho",
+    6: "https://seusite.com/julho",
+    7: "https://seusite.com/agosto",
+    8: "https://seusite.com/setembro",
+    9: "https://seusite.com/outubro",
+    10: "https://seusite.com/novembro",
+    11: "https://seusite.com/dezembro"
   };
 
-  const query = window.location.search.replace("?", "").toLowerCase();
-  const redirectUrl = monthRoutes[query]; //?jan
+  const HUB_URL = "https://docs.google.com/spreadsheets/d/1SvWtGoZkXNNVIlg3iWiMsySCdjp72OEJsk9uQs8zalQ/edit?gid=0#gid=0";
 
   if (!window.PathUI) {
     console.error("PathUI não carregado");
     return;
   }
 
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const currentMonth = now.getMonth();
+
+  let redirectUrl;
+
+  // 🔥 regra principal
+  if (currentYear !== VALID_YEAR) {
+    redirectUrl = HUB_URL;
+  } else {
+    redirectUrl = monthRoutes[currentMonth];
+  }
+
   if (!redirectUrl || !REDIRECT_ENABLED) {
     document.title = "Redirecionamento indisponível";
-    PathUI.setMessage("Destino inválido ou inexistente.");
+    PathUI.setMessage("Destino inválido.");
     PathUI.dimLoader();
     return;
   }
@@ -53,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (timeLeft <= 0) {
       clearInterval(interval);
-      window.location.href = redirectUrl;
+      window.location.replace(redirectUrl);
     }
   }, 1000);
 
@@ -66,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   PathUI.onGo(() => {
-    window.location.href = redirectUrl;
+    window.location.replace(redirectUrl);
   });
 
 });

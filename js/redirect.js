@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const REDIRECT_ENABLED = true;
-  const TIMEOUT_SECONDS = 5000;
+  const TIMEOUT_SECONDS = 3;
   const redirectUrl = document.body.dataset.redirect;
 
   if (!window.PathUI) {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (timeLeft <= 0) {
       clearInterval(interval);
-      window.location.href = redirectUrl;
+      window.location.replace(redirectUrl);
     }
   }, 1000);
 
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   PathUI.onGo(() => {
-    window.location.href = redirectUrl;
+    window.location.replace(redirectUrl);
   });
 
 });
