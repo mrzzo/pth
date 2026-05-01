@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     0: "", // jan
     1: "",
     2: "",
-    3: "",
+    3: "youtube.com",
     4: "https://docs.google.com/spreadsheets/d/1SvWtGoZkXNNVIlg3iWiMsySCdjp72OEJsk9uQs8zalQ/edit?gid=239692972#gid=239692972",
     5: "https://seusite.com/junho",
     6: "https://seusite.com/julho",

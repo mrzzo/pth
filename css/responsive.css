@@ -55,6 +55,9 @@
     width: 35px;
     height: 35px;
     } */
+    .actions button, .loader-wrapper{
+        background: var(--bg-site);
+    }
 }
 
 /*Tela de Celular MUITO pequenas*/
