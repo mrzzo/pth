@@ -252,7 +252,7 @@ a, a:visited{
 }
 
 #content{ /* conteudo do menu do selo de perfil oficial */
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
 }
 .nav a, .nav button{
     border-radius: 8px;
@@ -312,6 +312,9 @@ h2{
     margin-bottom: 10px;
     align-items: start;
     justify-content: center;
+}
+.square-link-legenda{
+    font-size: 0.7rem;
 }
 
 /* .material-symbols-outlined{
@@ -434,14 +437,33 @@ h2{
   ); */
   gap: 40px 10px;
   padding: 30px 0 80px 0;
+  
+  justify-items: center;
+    align-items: center;
 }
+/* .container {
+    width: var(--width-container-desk);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 10px;
+    padding: 30px 0 80px 0;
+
+    justify-items: center;
+    align-items: center;
+} */
 
 .block-folders{
-
+    /* display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center; */
     width: 100%;
   background: pin;  
   border: solid 1px var(--line-large-button-clear);
   padding: 40px 0 20px 0;
+}
+.block-folders .wrapper{
+    background: red;
 }
 
 .container-intro{
@@ -457,10 +479,11 @@ h2{
 .container-intro > .p-0-5-translucent{
     margin-top: -10px;
 }
-.p-0-5-translucent{
-    color:;
+.p-0-5-translucent{    
     opacity: 0.5;
-/*  margin-top: -10px; */
+}
+.p-0-7-translucent{
+    opacity: 0.7;
 }
 
 .photo-profile{
@@ -485,17 +508,41 @@ h2{
 }
 
 .container-links{
+    background: re;
     width: var(--width-xl-button-desk);
-    height: 65px;
+    height: 120px;
     /* background-color: var(--large-button); */
     display: flex;
     flex-direction: row;
     align-items: cente;
     justify-content:center;
     padding-left:;
+    padding: 25px 0 10px 0;
     box-sizing: border-box;
     text-decoration: non;
     gap: 15px;
+}
+.square-link-legenda{
+background: pin;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content:center;
+    height: calc(65px + 15px + 5px);
+}
+
+.link-legenda{
+    /* position: absolute;
+    bottom: 20%; */
+    display: flex;
+    background: yello;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;   
+    width: 65px;
+    height: 15px;
+    align-items: center;
+    justify-content:center;
 }
 
 .square-links{
@@ -696,7 +743,7 @@ body.modal-open {
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /* popup */
@@ -704,7 +751,7 @@ body.modal-open {
   position: absolute;
   bottom: 0%;
   left: 50%;
-  transform: translate(-50%, -40%) scale(0.95);
+  transform: translate(-50%, 20%) scale(0.95);
   transition: transform 0.25s ease;
   
     display: flex;
@@ -730,7 +777,12 @@ body.modal-open {
 
 /* quando abre */
 .modal.active #content {
-  transform: translate(-50%, -50%) scale(1);
+  /* transform: translate(-50%, -50%) scale(1); */
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+
 }
 
 /* botão fechar */
