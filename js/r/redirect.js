@@ -1,6 +1,30 @@
+function getSlug() {
+    return window.location.search
+        .substring(1)
+        .trim();
+}
+
+function normalizeUrl(url) {
+    return /^https?:\/\//i.test(url)
+        ? url
+        : `https://${url}`;
+}
+
+function getRedirectUrl(slug) {
+    const url = ROUTES[slug];
+
+    if (!url) return null;
+
+    return normalizeUrl(url);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const REDIRECT_ENABLED = true;
+    if (TIMEOUT_SECONDS <= 0) {
+    window.location.href = redirectUrl;
+    return;
+}
     const TIMEOUT_SECONDS = 0;
 
     if (!window.PathUI) {
@@ -8,9 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    const slug = window.location.search.substring(1).toLowerCase();
 
-    const redirectUrl = ROUTES[slug];
+    const slug = getSlug();
+
+const redirectUrl = getRedirectUrl(slug);
+    
 
     if (!redirectUrl || !REDIRECT_ENABLED) {
 
