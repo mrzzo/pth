@@ -2,6 +2,8 @@ const ROUTES = {
 
     //TESTE
     "Q1DC16YZ": "youtube.com",
+    "YQEJ20WM": "https://registro.br/dominio/categorias/",
+    
 
     // Planner 2026
     "planner26-jan": "https://www.notion.so/JANEIRO-2df1b43e1e8c800d83d8c7d260a22607?source=copy_link",
