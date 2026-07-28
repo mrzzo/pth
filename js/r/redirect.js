@@ -13,18 +13,12 @@ function normalizeUrl(url) {
 function getRedirectUrl(slug) {
     const url = ROUTES[slug];
 
-    if (!url) return null;
-
-    return normalizeUrl(url);
+    return url ? normalizeUrl(url) : null;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const REDIRECT_ENABLED = true;
-    if (TIMEOUT_SECONDS <= 0) {
-    window.location.href = redirectUrl;
-    return;
-}
     const TIMEOUT_SECONDS = 0;
 
     if (!window.PathUI) {
@@ -32,37 +26,34 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-
     const slug = getSlug();
+    const redirectUrl = getRedirectUrl(slug);
 
-const redirectUrl = getRedirectUrl(slug);
-    
-
-    if (!redirectUrl || !REDIRECT_ENABLED) {
-
+    if (!REDIRECT_ENABLED || !redirectUrl) {
         document.title = "Destino não encontrado";
-
         PathUI.setMessage("Destino inexistente.");
-
         PathUI.dimLoader();
+        return;
+    }
 
+    PathUI.setDestination(redirectUrl);
+
+    // Redirecionamento imediato
+    if (TIMEOUT_SECONDS <= 0) {
+        window.location.href = redirectUrl;
         return;
     }
 
     let timeLeft = TIMEOUT_SECONDS;
     let cancelled = false;
 
-    PathUI.setDestination(redirectUrl);
-
-    const update = () => {
-
+    function update() {
         document.title = `Redirecionando em ${timeLeft}...`;
 
         PathUI.setMessage(
-            `Redirecionando em ${timeLeft} segundos...`
+            `Redirecionando em ${timeLeft} segundo${timeLeft === 1 ? "" : "s"}...`
         );
-
-    };
+    }
 
     update();
 
@@ -75,33 +66,27 @@ const redirectUrl = getRedirectUrl(slug);
         update();
 
         if (timeLeft <= 0) {
-
             clearInterval(interval);
-
             window.location.href = redirectUrl;
-
         }
 
-    },1000);
+    }, 1000);
 
+    PathUI.onCancel(() => {
 
-    PathUI.onCancel(()=>{
-
-        cancelled=true;
-
+        cancelled = true;
         clearInterval(interval);
 
-        document.title="Redirecionamento cancelado";
-
+        document.title = "Redirecionamento cancelado";
         PathUI.setMessage("Redirecionamento cancelado.");
-
         PathUI.dimLoader();
 
     });
 
-    PathUI.onGo(()=>{
+    PathUI.onGo(() => {
 
-        window.location.href=redirectUrl;
+        clearInterval(interval);
+        window.location.href = redirectUrl;
 
     });
 
