@@ -15,7 +15,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://645xna.mimo.run/redirect-routes-path.js" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
@@ -23,95 +22,16 @@
 
 
     <script src="../js/theme.js" defer></script>
-    <script src="https://645xna.mimo.run/redirect-routes-path.js?t=1753820000"></script>
-    <!--<script src="../js/r/redirect-routes.js" defer></script>-->
-    <script src="../js/redirect-slug.js" defer></script>
+    <script src="../js/r/routes-api.js" defer></script>
+    <script src="../js/r/redirect-for-api.js" defer></script>
     <!--<script src="../js/button-share.js" defer></script>
     <script src="../js/layout.js" defer></script>
     <script src="../js/redirect-page-meses.js" defer></script>
     <script src="../components/footer-without-theme.js" defer></script>-->
-    <!--<style>
-        #routes{
-    display:grid;
-    gap:24px;
-}
-
-.route-card{
-    border:1px solid #ccc;
-    border-radius:12px;
-    padding:20px;
-}
-
-.buttons{
-    display:flex;
-    gap:12px;
-    margin:16px 0;
-}
-
-iframe{
-    width:100%;
-    height:300px;
-    border:1px solid #ddd;
-    border-radius:8px;
-}
-    </style>-->
 
 </head>
 
 <body>
-
-    <div class="container-clear">
-        <a href="routes.html" class="large-button">
-            <div class="icon-button"><span class="material-symbols-outlined icon-light">Link</span></div>
-            <p class="a">Acesse a lista de Rotas</p>
-        </a>   
-    </div>
-
-    <!--<h1>Rotas do Path</h1>
-
-    <div id="routes"></div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-
-    const container = document.getElementById("routes");
-
-    const BASE_URL = "https://mrzzo.github.io/pth/r/?";
-
-    Object.entries(ROUTES).forEach(([slug, url]) => {
-
-        const pathUrl = BASE_URL + slug;
-
-        const card = document.createElement("div");
-        card.className = "route-card";
-
-        card.innerHTML = `
-            <h3>${slug}</h3>
-
-            <p><strong>Destino:</strong><br>${url}</p>
-
-            <p><strong>Path:</strong><br>${pathUrl}</p>
-
-            <div class="buttons">
-                <a href="${pathUrl}" target="_blank">Abrir Path</a>
-
-                <a href="${url}" target="_blank">Abrir Destino</a>
-
-                <button>Copiar URL</button>
-            </div>
-        `;
-
-        card.querySelector("button").onclick = () => {
-            navigator.clipboard.writeText(pathUrl);
-        };
-
-        container.appendChild(card);
-
-    });
-
-});
-    </script>-->
-
 <!--
     <div class="card">
 

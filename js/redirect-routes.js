@@ -1,7 +1,7 @@
 const ROUTES = {
 
     //TESTE
-    "Q1DC16YZ": "youtube.com",
+    "Q1DC16YZ": "https://netflix.com",
     "YQEJ20WM": "https://registro.br/dominio/categorias/",
     
 
